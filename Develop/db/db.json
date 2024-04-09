@@ -1,0 +1,9 @@
+{
+    "notes": [
+      {
+        "title": "How to use Note Taker",
+        "text": "Start taking notes with express!\n\nTo create a new note:  Click the 'Add Note' button (the plus sign) in the top right corner of the window. Add a title to the title field and some details to the text field. When you're finished writing your note, click the 'Save' button (floppy disk) next to the 'Add Note' button in the top right corner of the window.\n\nTo view an old note: Find the note you'd like to view in the list on the left side of the window (the list shows titles of notes created on this site). Click on the title and the note, including the note's body text, will appear on the right side of the window.\n\nTo delete a note: Find the note you'd like to delete in the list on the left side of the window (the list shows titles of notes created on this site). Click the 'Delete' button (red trash can) next to the note title. You just deleted a note!",
+        "id": "0"
+      }
+    ]
+  }
