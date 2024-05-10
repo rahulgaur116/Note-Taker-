@@ -1,29 +1,31 @@
-let noteTitle;
-let noteText;
-let saveNoteBtn;
-let newNoteBtn;
+
+
+let noteheader;
+let noteinput;
+let saveBtn;
+let addnoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
-  saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  noteheader = document.querySelector('.note-title');
+  noteinput = document.querySelector('.note-textarea');
+  saveBtn = document.querySelector('.save-note');
+  addnoteBtn = document.querySelector('.new-note');
+  clearnoteBtn = document.querySelector('.clear-btn');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
-// Show an element
+
 const show = (elem) => {
   elem.style.display = 'inline';
 };
 
-// Hide an element
+
 const hide = (elem) => {
   elem.style.display = 'none';
 };
 
-// activeNote is used to keep track of the note in the textarea
-let activeNote = {};
+let startnewNote = {};
 
 // get request for the notes
 const getNotes = () =>
@@ -55,14 +57,17 @@ const deleteNote = (id) =>
 
   // function to hide the save btn until there is a note added to save
 const renderActiveNote = () => {
-  hide(saveNoteBtn);
+  hide(saveBtn);
+  hide(clearnoteBtn);
 
-  if (activeNote.id) {
+  if (startnewNote.id) {
+    show(addnoteBtn);
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
-    noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
+    noteTitle.value = startnewNote.title;
+    noteText.value = startnewNote.text;
   } else {
+    hide(addnoteBtn);
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
     noteTitle.value = '';
@@ -71,7 +76,7 @@ const renderActiveNote = () => {
 };
 
 // save note
-const handleNoteSave = () => {
+const NoteSavehandle = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
@@ -83,7 +88,7 @@ const handleNoteSave = () => {
 };
 
 // Delete the clicked note
-const handleNoteDelete = (e) => {
+const NoteDeletehandle = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
@@ -101,19 +106,19 @@ const handleNoteDelete = (e) => {
 };
 
 // Sets the activeNote and displays it
-const handleNoteView = (e) => {
+const NoteViewhandle = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
-const handleNewNoteView = (e) => {
+const NewNoteViewhandle = (e) => {
   activeNote = {};
   renderActiveNote();
 };
 
-const handleRenderSaveBtn = () => {
+const RenderSaveBtnhandle = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
     hide(saveNoteBtn);
   } else {
