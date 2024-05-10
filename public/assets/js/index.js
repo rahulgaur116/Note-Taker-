@@ -5,6 +5,7 @@ let noteinput;
 let saveBtn;
 let addnoteBtn;
 let noteList;
+let noteForm;
 
 if (window.location.pathname === '/notes') {
   noteheader = document.querySelector('.note-title');
@@ -13,6 +14,8 @@ if (window.location.pathname === '/notes') {
   addnoteBtn = document.querySelector('.new-note');
   clearnoteBtn = document.querySelector('.clear-btn');
   noteList = document.querySelectorAll('.list-container .list-group');
+  noteForm = document.querySelector('.note-form');
+
 }
 
 
@@ -188,6 +191,7 @@ if (window.location.pathname === '/notes') {
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
+  noteForm.addEventListener('input', handleRenderBtns);
 }
 
 getAndRenderNotes();
