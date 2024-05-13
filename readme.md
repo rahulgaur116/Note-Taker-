@@ -37,9 +37,9 @@ Open the index.html file in your web browser.
 Start creating, viewing, editing, and deleting notes.
 
 
-Demo
+Demo: Click on the link below to access the deployed app
 
-You can view a live demo of the app here.
+https://note-taker-xvsx.onrender.com
 
 
 Screenshots
