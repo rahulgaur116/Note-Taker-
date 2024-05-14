@@ -5,6 +5,8 @@ This is a simple note-taking application that allows users to create, view, edit
 
 Features
 
+This App provides a note taking tools for the user and saves them in the local database. User has the ability to inout title and description to their notes 
+User can also do the following:
 
 Create a new note with a title and content.
 
@@ -15,7 +17,7 @@ Edit existing notes to update their title or content.
 Delete notes that are no longer needed.
 
 
-Technologies Used
+Technologies Used:
 
 
 HTML5
@@ -29,18 +31,21 @@ Local Storage
 
 How to Use
 
+You can visit the link below to access the application:
+https://note-taker-xvsx.onrender.com
+
+Another way to test the application is as floows:
 
 Clone the repository to your local machine.
 
-Open the index.html file in your web browser.
+
+Run the srever file in your terminal 
+visit: http://localhost:3001/
 
 Start creating, viewing, editing, and deleting notes.
 
 
-Demo: Click on the link below to access the deployed app
-
-https://note-taker-xvsx.onrender.com
-
+Demo:Here is the list of Screenshots showing the app functionality.
 
 Screenshots
 
@@ -52,9 +57,12 @@ Homework/Note-Taker-/images/get-started.png
 Screenshot 2
 ![alt text](images/notes.png)
 
+Also provided in the images folder is the video of app funtionality.
 
 
-Author
 
+Author:
 
 Rahul Sharma
+
+Licenses: None 
