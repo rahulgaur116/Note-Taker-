@@ -12,7 +12,9 @@ module.exports = (app) => {
 
   // GET /api/notes should read the db.json file and return all saved notes as JSON.
   app.get('/api/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../db/db.json'));
+    let db = fs.readFileSync('db/db.json');
+    db = JSON.parse(db);
+    res.json(db);
   });
 
   // POST /api/notes should receive a new note to save on the request body, 
@@ -20,7 +22,6 @@ module.exports = (app) => {
   app.post('/api/notes', (req, res) => {
     let db = fs.readFileSync('db/db.json');
     db = JSON.parse(db);
-    res.json(db);
     // creating body for note
     let userNote = {
       title: req.body.title,
